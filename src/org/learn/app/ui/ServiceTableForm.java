@@ -36,14 +36,12 @@ public class ServiceTableForm extends BaseForm {
         try {
             model = new CustomTableModel<>(
                     ServiceEntity.class,
-                    new String[]{"ID","Название","Длительность","Стоимость","Скидка","Описание","Путь до картинки", "Картинка"},
+                    new String[]{},
                     ServiceEntityManager.selectAll()
             );
             table.setModel(model);
-
         } catch (SQLException e) {
             e.printStackTrace();
-            DialogUtil.showError(this, "Не удалось вывести список");
         }
     }
 
